@@ -21,12 +21,10 @@ from pyrogram import idle
 
 from . import app, sudo_users
 
-logging.basicConfig(level=logging.INFO)
-logging.getLogger('pyrogram.syncer').setLevel(logging.WARNING)
-
 
 async def main():
     await app.start()
+    print(f'[Started]: @{(await app.get_me()).username}')
     await idle()
     await app.stop()
 
